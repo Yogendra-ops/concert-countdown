@@ -13,183 +13,156 @@ export const Navbar = () => {
       }}
       className="
         relative
-        left-1/2
-        -translate-x-1/2
         z-20
-        w-screen
-        pt-3
-        pb-2
+        w-full
         shrink-0
+        px-2
+        sm:px-4
+        lg:px-0
+        pt-3
+        pb-3
       "
     >
 
-      {/* =====================================================
-          HCLTECH — TOP LEFT
-         ===================================================== */}
+      {/* Top Branding Row */}
+      <div className="w-full flex items-center justify-between gap-3">
 
-      <motion.div
-        initial={{ opacity: 0, x: -15 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{
-          delay: 0.1,
-          duration: 0.6
-        }}
-        className="
-          absolute
-          top-5
-          left-6
-          sm:left-10
-          md:left-12
-          lg:left-14
-          xl:left-16
-          z-30
-        "
-      >
-        <div className="flex items-center whitespace-nowrap">
+        {/* HCLTech */}
+        <motion.div
+          initial={{ opacity: 0, x: -15 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.1,
+            duration: 0.6
+          }}
+          className="shrink-0"
+        >
+          <div className="flex items-center whitespace-nowrap">
 
-          <span
-            className="
-              text-xl
-              sm:text-2xl
-              md:text-3xl
-              lg:text-4xl
-              font-semibold
-              tracking-tight
-              text-[#0072CE]
-            "
-          >
-            HCLTech
-          </span>
-
-          <span
-            className="
-              mx-2
-              sm:mx-2.5
-              md:mx-3
-              lg:mx-3.5
-              h-6
-              sm:h-7
-              md:h-8
-              lg:h-9
-              w-px
-              bg-[#AAB4C8]
-            "
-          />
-
-          <span
-            className="
-              text-[8px]
-              sm:text-[9px]
-              md:text-[10px]
-              lg:text-xs
-              font-normal
-              text-[#555F78]
-            "
-          >
-            Supercharging Progress™
-          </span>
-
-        </div>
-      </motion.div>
-
-
-      {/* =====================================================
-          HCL 50 — TOP RIGHT
-         ===================================================== */}
-
-      <motion.div
-        initial={{ opacity: 0, x: 15 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{
-          delay: 0.1,
-          duration: 0.6
-        }}
-        className="
-          absolute
-          top-4
-          right-6
-          sm:right-10
-          md:right-12
-          lg:right-14
-          xl:right-16
-          z-30
-        "
-      >
-
-        <div className="flex items-center gap-4 sm:gap-5 lg:gap-6">
-
-          {/* Anniversary Text */}
-          <div
-            className="
-              hidden
-              sm:flex
-              flex-col
-              items-end
-              justify-center
-              pr-4
-              lg:pr-5
-              border-r
-              border-[#CBD2E1]
-            "
-          >
             <span
               className="
-                text-[8px]
-                md:text-[9px]
-                lg:text-[10px]
-                tracking-[0.28em]
-                text-[#111C3D]
+                text-lg
+                sm:text-2xl
+                md:text-3xl
+                lg:text-4xl
                 font-semibold
-                uppercase
-                leading-tight
+                tracking-tight
+                text-[#0072CE]
               "
             >
-              Celebrating
+              HCLTech
             </span>
 
             <span
               className="
+                mx-1.5
+                sm:mx-2.5
+                md:mx-3
+                lg:mx-3.5
+                h-5
+                sm:h-7
+                md:h-8
+                lg:h-9
+                w-px
+                bg-[#AAB4C8]
+              "
+            />
+
+            <span
+              className="
+                hidden
+                sm:block
                 text-[8px]
-                md:text-[9px]
-                lg:text-[10px]
-                tracking-[0.22em]
+                md:text-[10px]
+                lg:text-xs
+                font-normal
                 text-[#555F78]
-                font-medium
-                uppercase
-                leading-tight
-                whitespace-nowrap
               "
             >
-              50 Years of Excellence
+              Supercharging Progress™
             </span>
+
           </div>
+        </motion.div>
 
+        {/* HCL 50 */}
+        <motion.div
+          initial={{ opacity: 0, x: 15 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            delay: 0.1,
+            duration: 0.6
+          }}
+          className="shrink-0"
+        >
+          <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
 
-          {/* HCL 50 Logo */}
-          <motion.img
-            whileHover={{ scale: 1.04 }}
-            src={EVENT_CONFIG.logos.hcl50}
-            alt="HCL 50 Years"
-            className="
-              h-16
-              sm:h-18
-              md:h-20
-              lg:h-24
-              xl:h-26
-              w-auto
-              object-contain
-            "
-          />
+            {/* Anniversary Text */}
+            <div
+              className="
+                hidden
+                md:flex
+                flex-col
+                items-end
+                justify-center
+                pr-3
+                lg:pr-5
+                border-r
+                border-[#CBD2E1]
+              "
+            >
+              <span
+                className="
+                  text-[8px]
+                  lg:text-[10px]
+                  tracking-[0.28em]
+                  text-[#111C3D]
+                  font-semibold
+                  uppercase
+                  leading-tight
+                "
+              >
+                Celebrating
+              </span>
 
-        </div>
+              <span
+                className="
+                  text-[8px]
+                  lg:text-[10px]
+                  tracking-[0.22em]
+                  text-[#555F78]
+                  font-medium
+                  uppercase
+                  leading-tight
+                  whitespace-nowrap
+                "
+              >
+                50 Years of Excellence
+              </span>
+            </div>
 
-      </motion.div>
+            {/* HCL 50 Logo */}
+            <motion.img
+              whileHover={{ scale: 1.04 }}
+              src={EVENT_CONFIG.logos.hcl50}
+              alt="HCL 50 Years"
+              className="
+                h-10
+                sm:h-14
+                md:h-18
+                lg:h-24
+                xl:h-26
+                w-auto
+                object-contain
+              "
+            />
 
+          </div>
+        </motion.div>
 
-      {/* =====================================================
-          CENTER TITLE
-         ===================================================== */}
+      </div>
 
+      {/* Center Title */}
       <div
         className="
           flex
@@ -197,10 +170,11 @@ export const Navbar = () => {
           items-center
           justify-center
           text-center
-          pt-2
-          mx-auto
-          w-fit
-          max-w-[65vw]
+          w-full
+          mt-5
+          sm:mt-6
+          lg:mt-3
+          px-2
         "
       >
 
@@ -212,22 +186,17 @@ export const Navbar = () => {
             duration: 0.6
           }}
           className="
-            text-4xl
-            sm:text-5xl
-            md:text-6xl
-            lg:text-7xl
             font-heading
-            tracking-wider
             uppercase
             font-bold
             text-gradient-hcl
             leading-none
-            whitespace-nowrap
+            tracking-wider
+            text-[clamp(2rem,6vw,4.5rem)]
           "
         >
           {EVENT_CONFIG.eventTitle}
         </motion.h1>
-
 
         {/* Artist Subheading */}
         <motion.p
@@ -239,11 +208,12 @@ export const Navbar = () => {
           }}
           className="
             mt-2
-            text-[10px]
+            text-[9px]
             sm:text-xs
             md:text-sm
             text-[#555F78]
-            tracking-widest
+            tracking-[0.15em]
+            sm:tracking-widest
             uppercase
             font-light
           "
