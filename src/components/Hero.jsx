@@ -4,20 +4,22 @@ import { EVENT_CONFIG } from '../config/event';
 
 export const Hero = () => {
   return (
-    <div className="relative w-full flex items-center justify-center">
+    <div
+      className="
+        relative
+        w-full
+        flex
+        items-center
+        justify-center
+      "
+    >
 
-      {/* Soft lavender-blue aura behind the image */}
+      {/* Aura */}
       <motion.div
         className="
           absolute
-          w-[300px]
-          sm:w-[420px]
-          md:w-[540px]
-          lg:w-[620px]
-          h-[300px]
-          sm:h-[420px]
-          md:h-[540px]
-          lg:h-[620px]
+          w-[clamp(260px,42vw,620px)]
+          aspect-square
           rounded-full
           pointer-events-none
         "
@@ -37,7 +39,7 @@ export const Hero = () => {
         }}
       />
 
-      {/* Singer image wrapper */}
+      {/* Image */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
@@ -47,15 +49,14 @@ export const Hero = () => {
         }}
         className="
           relative
+          w-full
           flex
           justify-center
           lg:justify-start
-          w-full
-          max-w-[650px]
+          min-w-0
         "
       >
 
-        {/* Gentle floating animation */}
         <motion.div
           animate={{
             y: [-4, 4, -4],
@@ -75,22 +76,17 @@ export const Hero = () => {
           "
         >
 
-          {/* Singer Image */}
           <img
             src={EVENT_CONFIG.singerImage}
             alt={EVENT_CONFIG.artistName}
             className="
+              block
               w-auto
-              max-w-full
+              max-w-[min(100%,650px)]
               h-auto
-              max-h-[32vh]
-              sm:max-h-[50vh]
-              md:max-h-[65vh]
-              lg:max-h-[82vh]
+              max-h-[clamp(280px,55dvh,700px)]
               object-contain
               pointer-events-none
-              transition-all
-              duration-300
             "
             style={{
               borderRadius: '28px',

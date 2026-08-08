@@ -9,23 +9,34 @@ export const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.7,
-        ease: [0.16, 1, 0.3, 1]
+        ease: [0.16, 1, 0.3, 1],
       }}
       className="
         relative
         z-20
         w-full
         shrink-0
-        px-2
-        sm:px-4
-        lg:px-0
-        pt-3
-        pb-3
+        pt-2
+        sm:pt-3
+        lg:pt-3
+        pb-2
       "
     >
 
-      {/* Top Branding Row */}
-      <div className="w-full flex items-center justify-between gap-3">
+      {/* =====================================================
+          BRANDING ROW
+         ===================================================== */}
+
+      <div
+        className="
+          w-full
+          flex
+          items-center
+          justify-between
+          gap-3
+          sm:gap-5
+        "
+      >
 
         {/* HCLTech */}
         <motion.div
@@ -33,21 +44,19 @@ export const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{
             delay: 0.1,
-            duration: 0.6
+            duration: 0.6,
           }}
-          className="shrink-0"
+          className="shrink-0 min-w-0"
         >
-          <div className="flex items-center whitespace-nowrap">
+          <div className="flex items-center">
 
             <span
               className="
-                text-lg
-                sm:text-2xl
-                md:text-3xl
-                lg:text-4xl
+                text-[clamp(1.1rem,3vw,2.25rem)]
                 font-semibold
                 tracking-tight
                 text-[#0072CE]
+                whitespace-nowrap
               "
             >
               HCLTech
@@ -56,15 +65,14 @@ export const Navbar = () => {
             <span
               className="
                 mx-1.5
-                sm:mx-2.5
-                md:mx-3
-                lg:mx-3.5
+                sm:mx-2
+                lg:mx-3
                 h-5
                 sm:h-7
-                md:h-8
-                lg:h-9
+                lg:h-8
                 w-px
                 bg-[#AAB4C8]
+                shrink-0
               "
             />
 
@@ -72,11 +80,10 @@ export const Navbar = () => {
               className="
                 hidden
                 sm:block
-                text-[8px]
-                md:text-[10px]
-                lg:text-xs
+                text-[clamp(7px,0.8vw,12px)]
                 font-normal
                 text-[#555F78]
+                whitespace-nowrap
               "
             >
               Supercharging Progress™
@@ -85,19 +92,21 @@ export const Navbar = () => {
           </div>
         </motion.div>
 
+
         {/* HCL 50 */}
         <motion.div
           initial={{ opacity: 0, x: 15 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
             delay: 0.1,
-            duration: 0.6
+            duration: 0.6,
           }}
           className="shrink-0"
         >
-          <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
 
-            {/* Anniversary Text */}
+          <div className="flex items-center">
+
+            {/* Anniversary text */}
             <div
               className="
                 hidden
@@ -107,15 +116,17 @@ export const Navbar = () => {
                 justify-center
                 pr-3
                 lg:pr-5
+                mr-2
+                lg:mr-4
                 border-r
                 border-[#CBD2E1]
               "
             >
+
               <span
                 className="
-                  text-[8px]
-                  lg:text-[10px]
-                  tracking-[0.28em]
+                  text-[clamp(7px,0.7vw,10px)]
+                  tracking-[0.25em]
                   text-[#111C3D]
                   font-semibold
                   uppercase
@@ -127,9 +138,8 @@ export const Navbar = () => {
 
               <span
                 className="
-                  text-[8px]
-                  lg:text-[10px]
-                  tracking-[0.22em]
+                  text-[clamp(7px,0.7vw,10px)]
+                  tracking-[0.18em]
                   text-[#555F78]
                   font-medium
                   uppercase
@@ -139,6 +149,7 @@ export const Navbar = () => {
               >
                 50 Years of Excellence
               </span>
+
             </div>
 
             {/* HCL 50 Logo */}
@@ -147,34 +158,33 @@ export const Navbar = () => {
               src={EVENT_CONFIG.logos.hcl50}
               alt="HCL 50 Years"
               className="
-                h-10
-                sm:h-14
-                md:h-18
-                lg:h-24
-                xl:h-26
+                h-[clamp(2.4rem,6vw,6rem)]
                 w-auto
                 object-contain
               "
             />
 
           </div>
+
         </motion.div>
 
       </div>
 
-      {/* Center Title */}
+
+      {/* =====================================================
+          CENTER TITLE
+         ===================================================== */}
+
       <div
         className="
+          w-full
           flex
           flex-col
           items-center
           justify-center
           text-center
-          w-full
-          mt-5
-          sm:mt-6
-          lg:mt-3
-          px-2
+          mt-[clamp(0.8rem,2vw,1.2rem)]
+          px-1
         "
       >
 
@@ -183,7 +193,7 @@ export const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.3,
-            duration: 0.6
+            duration: 0.6,
           }}
           className="
             font-heading
@@ -191,28 +201,28 @@ export const Navbar = () => {
             font-bold
             text-gradient-hcl
             leading-none
-            tracking-wider
+            tracking-wide
             text-[clamp(2rem,6vw,4.5rem)]
+            max-w-full
           "
         >
           {EVENT_CONFIG.eventTitle}
         </motion.h1>
 
-        {/* Artist Subheading */}
+
+        {/* Artist */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
             delay: 0.5,
-            duration: 0.5
+            duration: 0.5,
           }}
           className="
             mt-2
-            text-[9px]
-            sm:text-xs
-            md:text-sm
+            text-[clamp(8px,1.2vw,14px)]
             text-[#555F78]
-            tracking-[0.15em]
+            tracking-[0.12em]
             sm:tracking-widest
             uppercase
             font-light

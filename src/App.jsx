@@ -10,16 +10,10 @@ import { DisplayControls } from './components/DisplayControls';
 export default function App() {
   return (
     <>
-      {/* Background */}
       <Background />
-
-      {/* Floating Canvas Dust Particles */}
       <Particles />
-
-      {/* Top Right TV / Fullscreen & Sound Controls */}
       <DisplayControls />
 
-      {/* Main Digital Signage Layout */}
       <div
         className="
           relative
@@ -30,57 +24,62 @@ export default function App() {
           flex
           flex-col
           min-h-[100dvh]
-          py-2
           px-3
-          sm:px-6
+          sm:px-5
+          lg:px-8
+          py-2
         "
       >
 
-        {/* Top Header */}
+        {/* Header */}
         <Navbar />
 
         {/* Main Content */}
         <main
           className="
+            w-full
             flex-1
             grid
             grid-cols-1
             lg:grid-cols-12
             items-center
-            justify-center
-            gap-6
+            justify-items-center
+            gap-5
+            sm:gap-6
             lg:gap-8
-            w-full
-            py-4
+            py-3
+            sm:py-4
             lg:py-0
           "
         >
 
-          {/* Left — Singer */}
-          <div
+          {/* Singer */}
+          <section
             className="
+              w-full
               lg:col-span-5
               flex
               items-center
               justify-center
-              w-full
+              min-w-0
             "
           >
             <Hero />
-          </div>
+          </section>
 
-          {/* Right — Countdown */}
-          <div
+          {/* Countdown */}
+          <section
             className="
+              w-full
               lg:col-span-7
               flex
               items-center
               justify-center
-              w-full
+              min-w-0
             "
           >
             <Countdown />
-          </div>
+          </section>
 
         </main>
 
