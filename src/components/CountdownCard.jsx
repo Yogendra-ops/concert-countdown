@@ -22,7 +22,7 @@ export const CountdownCard = ({ value, label }) => {
 
   return (
     <motion.div
-      whileHover={{ y: -4, scale: 1.02 }}
+      whileHover={{ y: -3, scale: 1.015 }}
       transition={{
         type: 'spring',
         stiffness: 400,
@@ -36,14 +36,17 @@ export const CountdownCard = ({ value, label }) => {
         items-center
         justify-center
         w-full
+        aspect-square
         min-w-0
-        p-[clamp(0.45rem,1.2vw,1.4rem)]
-        min-h-[clamp(90px,11vw,180px)]
+        p-[clamp(0.5rem,1vw,1.25rem)]
+        sm:p-[clamp(0.6rem,1.2vw,1.5rem)]
         rounded-[clamp(0.75rem,1.5vw,1.5rem)]
+        sm:rounded-[clamp(0.85rem,1.7vw,1.75rem)]
         glass-panel-glow
         border
-        border-blue-200/60
-        shadow-[0_10px_30px_rgba(60,80,150,0.10)]
+        border-blue-200/50
+        shadow-[0_8px_24px_rgba(60,80,150,0.10)]
+        hover:shadow-[0_12px_32px_rgba(60,80,150,0.14)]
         transition-all
         duration-300
         overflow-hidden
@@ -68,11 +71,13 @@ export const CountdownCard = ({ value, label }) => {
       <div
         className="
           relative
-          h-[clamp(42px,6vw,80px)]
+          w-full
+          flex-1
           flex
           items-center
           justify-center
           overflow-hidden
+          px-1
         "
       >
 
@@ -81,9 +86,9 @@ export const CountdownCard = ({ value, label }) => {
           <motion.span
             key={formattedValue}
             initial={{
-              y: -16,
+              y: -14,
               opacity: 0,
-              scale: 0.85,
+              scale: 0.88,
             }}
             animate={{
               y: 0,
@@ -91,17 +96,21 @@ export const CountdownCard = ({ value, label }) => {
               scale: 1,
             }}
             exit={{
-              y: 16,
+              y: 14,
               opacity: 0,
-              scale: 0.85,
+              scale: 0.88,
             }}
             transition={{
-              duration: 0.35,
+              duration: 0.32,
               ease: [0.16, 1, 0.3, 1],
             }}
             className={`
               font-number
-              text-[clamp(2rem,4.5vw,4.5rem)]
+              text-[clamp(1.5rem,4.2vw,3.75rem)]
+              sm:text-[clamp(1.6rem,4.6vw,4rem)]
+              lg:text-[clamp(1.8rem,4.5vw,4rem)]
+              xl:text-[clamp(1.9rem,3.8vw,3.75rem)]
+              2xl:text-[clamp(2rem,3.4vw,3.6rem)]
               font-black
               tracking-tight
               leading-none
@@ -121,11 +130,14 @@ export const CountdownCard = ({ value, label }) => {
       {/* Label */}
       <span
         className="
+          shrink-0
           mt-1
-          text-[clamp(7px,0.9vw,14px)]
+          sm:mt-1.5
+          text-[clamp(8px,0.95vw,13px)]
+          sm:text-[clamp(9px,1.05vw,15px)]
           font-semibold
-          tracking-[0.12em]
-          sm:tracking-[0.22em]
+          tracking-[0.16em]
+          sm:tracking-[0.2em]
           uppercase
           text-[#555F78]
           group-hover:text-[#1769E8]
@@ -139,16 +151,18 @@ export const CountdownCard = ({ value, label }) => {
       {/* Bottom accent */}
       <motion.div
         animate={{
-          scaleX: isUpdating ? [1, 1.4, 1] : 1,
-          opacity: isUpdating ? [0.6, 1, 0.6] : 0.7,
+          scaleX: isUpdating ? [1, 1.35, 1] : 1,
+          opacity: isUpdating ? [0.55, 1, 0.55] : 0.65,
         }}
         transition={{
           duration: 0.4,
         }}
         className="
-          w-[clamp(1.8rem,3vw,4rem)]
+          shrink-0
+          w-[clamp(1.5rem,2.8vw,3.5rem)]
           h-[2px]
-          mt-2
+          mt-1.5
+          sm:mt-2
           rounded-full
           bg-gradient-to-r
           from-blue-500

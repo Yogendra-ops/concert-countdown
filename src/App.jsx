@@ -19,15 +19,28 @@ export default function App() {
           relative
           z-10
           w-full
-          max-w-7xl
+          max-w-[95rem]
           mx-auto
           flex
           flex-col
           min-h-[100dvh]
-          px-3
-          sm:px-5
-          lg:px-8
-          py-2
+          lg:h-[100dvh]
+          lg:max-h-[100dvh]
+          overflow-y-auto
+          lg:overflow-hidden
+          overflow-x-hidden
+          px-4
+          sm:px-6
+          md:px-8
+          lg:px-10
+          xl:px-12
+          2xl:px-14
+          py-3
+          sm:py-4
+          md:py-5
+          lg:py-3
+          xl:py-2
+          2xl:py-2
         "
       >
 
@@ -44,12 +57,20 @@ export default function App() {
             lg:grid-cols-12
             items-center
             justify-items-center
-            gap-5
-            sm:gap-6
+            content-center
+            gap-6
+            sm:gap-8
+            md:gap-10
             lg:gap-8
-            py-3
-            sm:py-4
-            lg:py-0
+            xl:gap-10
+            2xl:gap-12
+            py-4
+            sm:py-5
+            md:py-6
+            lg:py-3
+            xl:py-2
+            2xl:py-2
+            min-h-0
           "
         >
 
@@ -57,11 +78,13 @@ export default function App() {
           <section
             className="
               w-full
-              lg:col-span-5
+              h-full
+              lg:col-span-6
               flex
               items-center
               justify-center
               min-w-0
+              min-h-0
             "
           >
             <Hero />
@@ -71,11 +94,13 @@ export default function App() {
           <section
             className="
               w-full
-              lg:col-span-7
+              h-full
+              lg:col-span-6
               flex
               items-center
               justify-center
               min-w-0
+              min-h-0
             "
           >
             <Countdown />

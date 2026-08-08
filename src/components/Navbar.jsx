@@ -16,10 +16,17 @@ export const Navbar = () => {
         z-20
         w-full
         shrink-0
-        pt-2
-        sm:pt-3
-        lg:pt-3
-        pb-2
+        pt-1.5
+        sm:pt-2
+        md:pt-2.5
+        lg:pt-2
+        xl:pt-1.5
+        2xl:pt-1.5
+        pb-1.5
+        sm:pb-2
+        lg:pb-1.5
+        xl:pb-1
+        2xl:pb-1
       "
     >
 
@@ -33,8 +40,9 @@ export const Navbar = () => {
           flex
           items-center
           justify-between
-          gap-3
-          sm:gap-5
+          gap-2.5
+          sm:gap-4
+          md:gap-6
         "
       >
 
@@ -52,8 +60,8 @@ export const Navbar = () => {
 
             <span
               className="
-                text-[clamp(1.1rem,3vw,2.25rem)]
-                font-semibold
+                text-[clamp(1.2rem,3.4vw,2.75rem)]
+                font-bold
                 tracking-tight
                 text-[#0072CE]
                 whitespace-nowrap
@@ -65,11 +73,11 @@ export const Navbar = () => {
             <span
               className="
                 mx-1.5
-                sm:mx-2
-                lg:mx-3
+                sm:mx-2.5
+                md:mx-3
                 h-5
-                sm:h-7
-                lg:h-8
+                sm:h-8
+                md:h-9
                 w-px
                 bg-[#AAB4C8]
                 shrink-0
@@ -80,8 +88,8 @@ export const Navbar = () => {
               className="
                 hidden
                 sm:block
-                text-[clamp(7px,0.8vw,12px)]
-                font-normal
+                text-[clamp(8px,0.9vw,14px)]
+                font-medium
                 text-[#555F78]
                 whitespace-nowrap
               "
@@ -110,14 +118,17 @@ export const Navbar = () => {
             <div
               className="
                 hidden
+                sm:flex
                 md:flex
                 flex-col
                 items-end
                 justify-center
-                pr-3
-                lg:pr-5
-                mr-2
-                lg:mr-4
+                pr-2
+                sm:pr-3
+                md:pr-5
+                mr-1.5
+                sm:mr-2
+                md:mr-4
                 border-r
                 border-[#CBD2E1]
               "
@@ -125,10 +136,11 @@ export const Navbar = () => {
 
               <span
                 className="
-                  text-[clamp(7px,0.7vw,10px)]
-                  tracking-[0.25em]
+                  text-[clamp(8px,0.8vw,11px)]
+                  tracking-[0.22em]
+                  sm:tracking-[0.25em]
                   text-[#111C3D]
-                  font-semibold
+                  font-bold
                   uppercase
                   leading-tight
                 "
@@ -138,10 +150,11 @@ export const Navbar = () => {
 
               <span
                 className="
-                  text-[clamp(7px,0.7vw,10px)]
-                  tracking-[0.18em]
+                  text-[clamp(8px,0.8vw,11px)]
+                  tracking-[0.15em]
+                  sm:tracking-[0.18em]
                   text-[#555F78]
-                  font-medium
+                  font-semibold
                   uppercase
                   leading-tight
                   whitespace-nowrap
@@ -158,7 +171,7 @@ export const Navbar = () => {
               src={EVENT_CONFIG.logos.hcl50}
               alt="HCL 50 Years"
               className="
-                h-[clamp(2.4rem,6vw,6rem)]
+                h-[clamp(2.6rem,6.8vw,7rem)]
                 w-auto
                 object-contain
               "
@@ -183,7 +196,11 @@ export const Navbar = () => {
           items-center
           justify-center
           text-center
-          mt-[clamp(0.8rem,2vw,1.2rem)]
+          mt-[clamp(0.6rem,1.6vw,1.1rem)]
+          sm:mt-[clamp(0.7rem,1.8vw,1.2rem)]
+          lg:mt-[clamp(0.4rem,1vw,0.75rem)]
+          xl:mt-[clamp(0.35rem,0.9vw,0.65rem)]
+          2xl:mt-[clamp(0.35rem,0.8vw,0.6rem)]
           px-1
         "
       >
@@ -198,11 +215,16 @@ export const Navbar = () => {
           className="
             font-heading
             uppercase
-            font-bold
+            font-black
             text-gradient-hcl
-            leading-none
-            tracking-wide
+            leading-[0.95]
+            tracking-[0.03em]
+            sm:tracking-wide
             text-[clamp(2rem,6vw,4.5rem)]
+            sm:text-[clamp(2.2rem,6.5vw,5rem)]
+            lg:text-[clamp(2.3rem,5.2vw,4.2rem)]
+            xl:text-[clamp(2.4rem,4.8vw,4rem)]
+            2xl:text-[clamp(2.5rem,4.5vw,3.8rem)]
             max-w-full
           "
         >
@@ -219,24 +241,31 @@ export const Navbar = () => {
             duration: 0.5,
           }}
           className="
-            mt-2
-            text-[clamp(8px,1.2vw,14px)]
+            mt-1.5
+            sm:mt-2
+            lg:mt-1
+            xl:mt-0.5
+            text-[clamp(9px,1.4vw,16px)]
+            sm:text-[clamp(10px,1.5vw,17px)]
+            lg:text-[clamp(10px,1.15vw,14px)]
+            xl:text-[clamp(10px,1vw,13px)]
             text-[#555F78]
-            tracking-[0.12em]
-            sm:tracking-widest
+            tracking-[0.14em]
+            sm:tracking-[0.2em]
             uppercase
-            font-light
+            font-normal
           "
         >
           Featuring{' '}
 
           <span
             className="
-              font-semibold
+              font-bold
               text-[#111C3D]
               underline
               decoration-purple-400
               underline-offset-2
+              sm:underline-offset-4
             "
           >
             {EVENT_CONFIG.artistName}
