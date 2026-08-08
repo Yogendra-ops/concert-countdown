@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-number: 'Montserrat', sans-serif;
+
+  /* HCL Brand Colors */
+  --color-hcl-purple-deep: #6D2EDC;
+  --color-hcl-purple-bright: #7B3FE4;
+  --color-hcl-indigo: #5C4DFF;
+  --color-hcl-blue-vibrant: #1769E8;
+  --color-hcl-blue-primary: #0072CE;
+
+  /* Light Theme */
+  --color-hcl-dark-bg: #F8F9FF;
+  --color-hcl-dark-card: #FFFFFF;
+  --color-hcl-slate: #555F78;
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+@layer base {
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #F8F9FF;
+    color: #111C3D;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: 0.05em;
+  }
+
+  .font-number {
+    font-family: var(--font-number);
+    font-weight: 800;
+  }
+}
+
+
+/* =========================================================
+   LIGHT GLASSMORPHISM
+   ========================================================= */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(80, 110, 200, 0.15);
+
+  box-shadow:
+    0 10px 30px rgba(50, 70, 130, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   LIGHT PURPLE / BLUE GLASS
+   ========================================================= */
+
+.glass-panel-glow {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(238, 233, 255, 0.82));
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(123, 63, 228, 0.18);
+
+  box-shadow:
+    0 10px 40px rgba(90, 70, 180, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+
+/* =========================================================
+   HCL HEADING GRADIENT
+   ========================================================= */
+
+.text-gradient-hcl {
+  background: linear-gradient(135deg,
+      #111C3D 0%,
+      #1769E8 48%,
+      #5C4DFF 72%,
+      #6D2EDC 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* =========================================================
+   PURPLE + BLUE TEXT
+   ========================================================= */
+
+.text-gradient-purple-blue {
+  background: linear-gradient(90deg,
+      #1769E8 0%,
+      #5C4DFF 50%,
+      #6D2EDC 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* =========================================================
+   GOLD TEXT
+   ========================================================= */
+
+.text-gradient-gold {
+  background: linear-gradient(135deg,
+      #FFF5C0 0%,
+      #FFD700 50%,
+      #FFA500 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* =========================================================
+   SOFT AMBIENT ANIMATION
+   ========================================================= */
+
+@keyframes ambientGlow {
+
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+}
+
+
+@keyframes breatheSlow {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.018);
+  }
+}
+
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+.animate-ambient-glow {
+  animation: ambientGlow 8s ease-in-out infinite;
+}
+
+
+.animate-breathe {
+  animation: breatheSlow 6s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6D2EDC;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5C4DFF;
+}
