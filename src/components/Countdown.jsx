@@ -76,11 +76,29 @@ export const Countdown = () => {
         duration: 0.8,
         ease: 'easeOut'
       }}
-      className="relative z-20 w-full flex flex-col items-center justify-center h-full px-2"
+      className="
+        relative
+        z-20
+        w-full
+        flex
+        flex-col
+        items-center
+        justify-center
+        lg:h-full
+        px-2
+      "
     >
 
       {/* Countdown Cards */}
-      <div className="grid grid-cols-4 gap-4 sm:gap-5 lg:gap-6 w-full max-w-3xl">
+      <div className="
+        grid
+        grid-cols-4
+        gap-2
+        sm:gap-4
+        lg:gap-6
+        w-full
+        max-w-3xl
+      ">
 
         <CountdownCard
           value={timeLeft.days}
@@ -105,7 +123,30 @@ export const Countdown = () => {
       </div>
 
       {/* Event Details */}
-      <div className="mt-4 lg:mt-5 glass-panel px-5 py-3 sm:px-7 sm:py-3.5 rounded-2xl border border-blue-100/70 shadow-[0_8px_25px_rgba(60,80,150,0.08)] w-full max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-5">
+      <div className="
+        mt-3
+        sm:mt-4
+        lg:mt-5
+        glass-panel
+        px-4
+        py-3
+        sm:px-7
+        sm:py-3.5
+        rounded-2xl
+        border
+        border-blue-100/70
+        shadow-[0_8px_25px_rgba(60,80,150,0.08)]
+        w-full
+        max-w-3xl
+        mx-auto
+        flex
+        flex-col
+        sm:flex-row
+        items-center
+        justify-between
+        gap-3
+        sm:gap-5
+      ">
 
         {/* Date & Day */}
         <div className="flex items-center gap-2.5">

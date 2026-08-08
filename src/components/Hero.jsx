@@ -8,7 +8,19 @@ export const Hero = () => {
 
       {/* Soft lavender-blue aura behind the image */}
       <motion.div
-        className="absolute w-[360px] sm:w-[450px] md:w-[540px] lg:w-[620px] h-[360px] sm:h-[450px] md:h-[540px] lg:h-[620px] rounded-full pointer-events-none"
+        className="
+          absolute
+          w-[300px]
+          sm:w-[420px]
+          md:w-[540px]
+          lg:w-[620px]
+          h-[300px]
+          sm:h-[420px]
+          md:h-[540px]
+          lg:h-[620px]
+          rounded-full
+          pointer-events-none
+        "
         style={{
           background:
             'radial-gradient(circle, rgba(139,92,246,0.12) 0%, rgba(59,130,246,0.06) 45%, transparent 70%)',
@@ -33,7 +45,14 @@ export const Hero = () => {
           duration: 0.9,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="relative flex justify-center lg:justify-start w-full max-w-[650px]"
+        className="
+          relative
+          flex
+          justify-center
+          lg:justify-start
+          w-full
+          max-w-[650px]
+        "
       >
 
         {/* Gentle floating animation */}
@@ -47,14 +66,32 @@ export const Hero = () => {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="relative w-full flex justify-center lg:justify-start"
+          className="
+            relative
+            w-full
+            flex
+            justify-center
+            lg:justify-start
+          "
         >
 
           {/* Singer Image */}
           <img
             src={EVENT_CONFIG.singerImage}
             alt={EVENT_CONFIG.artistName}
-            className="w-auto max-w-full h-auto max-h-[62vh] sm:max-h-[70vh] md:max-h-[76vh] lg:max-h-[82vh] object-contain pointer-events-none transition-all duration-300"
+            className="
+              w-auto
+              max-w-full
+              h-auto
+              max-h-[32vh]
+              sm:max-h-[50vh]
+              md:max-h-[65vh]
+              lg:max-h-[82vh]
+              object-contain
+              pointer-events-none
+              transition-all
+              duration-300
+            "
             style={{
               borderRadius: '28px',
               filter:

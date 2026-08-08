@@ -26,15 +26,15 @@ export default function App() {
         <Navbar />
 
         {/* Main 2-Column Section */}
-        <main className="flex-1 grid grid-cols-1 lg:grid-cols-12 items-center justify-center gap-4 lg:gap-8 w-full">
+        <main className="lg:flex-1 grid grid-cols-1 lg:grid-cols-12 items-center justify-center gap-4 lg:gap-8 w-full py-3 lg:py-0">
 
           {/* Left — Singer */}
-          <div className="lg:col-span-5 flex items-center justify-center h-full">
+          <div className="lg:col-span-5 flex items-center justify-center h-auto lg:h-full">
             <Hero />
           </div>
 
           {/* Right — Countdown */}
-          <div className="lg:col-span-7 flex items-center justify-center h-full">
+          <div className="lg:col-span-7 flex items-center justify-center h-auto lg:h-full">
             <Countdown />
           </div>
 

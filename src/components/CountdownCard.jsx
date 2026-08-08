@@ -29,25 +29,56 @@ export const CountdownCard = ({ value, label }) => {
         damping: 25
       }}
       className="
-        relative group
-        flex flex-col items-center justify-center
-        p-4 sm:p-5 lg:p-6
+        relative
+        group
+        flex
+        flex-col
+        items-center
+        justify-center
+        p-2
+        sm:p-4
+        lg:p-6
         w-full
-        min-h-[130px] sm:min-h-[155px] lg:min-h-[180px]
-        rounded-2xl lg:rounded-3xl
+        min-h-[90px]
+        sm:min-h-[130px]
+        lg:min-h-[180px]
+        rounded-xl
+        sm:rounded-2xl
+        lg:rounded-3xl
         glass-panel-glow
-        border border-blue-200/60
+        border
+        border-blue-200/60
         shadow-[0_10px_30px_rgba(60,80,150,0.10)]
-        transition-all duration-300
+        transition-all
+        duration-300
         overflow-hidden
       "
     >
 
       {/* Top edge highlight */}
-      <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-blue-400/50 to-transparent" />
+      <div className="
+        absolute
+        top-0
+        inset-x-0
+        h-[2px]
+        sm:h-[3px]
+        bg-gradient-to-r
+        from-transparent
+        via-blue-400/50
+        to-transparent
+      " />
 
       {/* Animated Number */}
-      <div className="relative h-16 sm:h-20 lg:h-24 flex items-center justify-center overflow-hidden">
+      <div className="
+        relative
+        h-12
+        sm:h-16
+        lg:h-24
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+      ">
 
         <AnimatePresence mode="popLayout">
 
@@ -74,7 +105,9 @@ export const CountdownCard = ({ value, label }) => {
             }}
             className={`
               font-number
-              text-5xl sm:text-6xl lg:text-7xl
+              text-3xl
+              sm:text-5xl
+              lg:text-7xl
               font-black
               tracking-tight
               ${isUpdating
@@ -93,14 +126,19 @@ export const CountdownCard = ({ value, label }) => {
       {/* Card Label */}
       <span
         className="
-          mt-2
-          text-xs sm:text-sm lg:text-base
+          mt-1
+          sm:mt-2
+          text-[8px]
+          sm:text-xs
+          lg:text-base
           font-semibold
-          tracking-[0.22em]
+          tracking-[0.12em]
+          sm:tracking-[0.22em]
           uppercase
           text-[#555F78]
           group-hover:text-[#1769E8]
-          transition-colors duration-300
+          transition-colors
+          duration-300
         "
       >
         {label}
@@ -116,11 +154,18 @@ export const CountdownCard = ({ value, label }) => {
           duration: 0.4
         }}
         className="
-          w-12 sm:w-14 lg:w-16
-          h-[3px]
-          mt-3
+          w-8
+          sm:w-12
+          lg:w-16
+          h-[2px]
+          sm:h-[3px]
+          mt-2
+          sm:mt-3
           rounded-full
-          bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600
+          bg-gradient-to-r
+          from-blue-500
+          via-indigo-500
+          to-purple-600
         "
       />
 
