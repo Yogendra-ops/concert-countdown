@@ -61,6 +61,38 @@
 }
 
 /* =========================================================
+   MAIN GLASS CARD
+   ========================================================= */
+
+.main-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  box-shadow:
+    0 20px 60px rgba(30, 50, 120, 0.12),
+    0 4px 20px rgba(30, 50, 120, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}
+
+/* =========================================================
+   LEFT PANEL – BLUE WAVE WITH SINGER
+   ========================================================= */
+
+.hero-wave-panel {
+  position: relative;
+  background: linear-gradient(160deg, #0072CE 0%, #1769E8 35%, #2E7BF6 65%, #4A90F7 100%);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* =========================================================
    LIGHT GLASSMORPHISM
    ========================================================= */
 

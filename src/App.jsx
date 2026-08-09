@@ -1,6 +1,5 @@
 import React from 'react';
 import { Background } from './components/Background';
-import { Particles } from './components/Particles';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Countdown } from './components/Countdown';
@@ -11,7 +10,6 @@ export default function App() {
   return (
     <>
       <Background />
-      <Particles />
       <DisplayControls />
 
       <div
@@ -35,77 +33,74 @@ export default function App() {
           lg:px-10
           xl:px-12
           2xl:px-14
-          py-3
-          sm:py-4
-          md:py-5
-          lg:py-3
-          xl:py-2
-          2xl:py-2
         "
       >
 
         {/* Header */}
         <Navbar />
 
-        {/* Main Content */}
+        {/* Main Glass Card */}
         <main
           className="
             w-full
             flex-1
-            grid
-            grid-cols-1
-            lg:grid-cols-12
+            flex
             items-center
-            justify-items-center
-            content-center
-            gap-6
-            sm:gap-8
-            md:gap-10
-            lg:gap-8
-            xl:gap-10
-            2xl:gap-12
-            py-4
-            sm:py-5
-            md:py-6
-            lg:py-3
-            xl:py-2
-            2xl:py-2
+            justify-center
             min-h-0
+            py-2
+            sm:py-4
+            lg:py-2
           "
         >
-
-          {/* Singer */}
-          <section
+          <div
             className="
+              main-card
               w-full
-              h-full
-              lg:col-span-6
-              flex
-              items-center
-              justify-center
-              min-w-0
-              min-h-0
+              max-w-[1200px]
+              2xl:max-w-[1300px]
+              grid
+              grid-cols-1
+              lg:grid-cols-12
+              min-h-[360px]
+              sm:min-h-[420px]
+              lg:min-h-[460px]
+              xl:min-h-[500px]
+              max-h-[85dvh]
+              lg:max-h-[78dvh]
             "
           >
-            <Hero />
-          </section>
 
-          {/* Countdown */}
-          <section
-            className="
-              w-full
-              h-full
-              lg:col-span-6
-              flex
-              items-center
-              justify-center
-              min-w-0
-              min-h-0
-            "
-          >
-            <Countdown />
-          </section>
+            {/* Left: Singer Panel */}
+            <div
+              className="
+                lg:col-span-5
+                relative
+                min-h-[260px]
+                sm:min-h-[300px]
+                lg:min-h-0
+                overflow-hidden
+                rounded-t-[24px]
+                lg:rounded-t-none
+                lg:rounded-l-[24px]
+              "
+            >
+              <Hero />
+            </div>
 
+            {/* Right: Countdown Panel */}
+            <div
+              className="
+                lg:col-span-7
+                flex
+                items-center
+                justify-center
+              "
+            >
+              <Countdown />
+            </div>
+
+          </div>
         </main>
 
         {/* Footer */}

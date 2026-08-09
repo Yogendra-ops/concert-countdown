@@ -71,31 +71,71 @@ export const Countdown = () => {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{
-        delay: 0.5,
+        delay: 0.3,
         duration: 0.8,
         ease: 'easeOut',
       }}
       className="
-        relative
-        z-20
         w-full
-        max-w-[52rem]
-        sm:max-w-[56rem]
-        md:max-w-[60rem]
-        lg:max-w-[44rem]
-        xl:max-w-[48rem]
-        2xl:max-w-[52rem]
+        h-full
         flex
         flex-col
         items-center
         justify-center
-        px-0
-        gap-0
-        min-w-0
-        h-full
-        min-h-0
+        px-4
+        sm:px-6
+        lg:px-8
+        xl:px-10
+        py-6
+        sm:py-8
+        lg:py-6
       "
     >
+
+      {/* Title */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+        className="text-center mb-4 sm:mb-6 lg:mb-5"
+      >
+        <h1
+          className="
+            font-heading
+            uppercase
+            font-black
+            leading-[0.95]
+            tracking-[0.03em]
+            sm:tracking-wide
+            text-[clamp(1.8rem,4.5vw,3.8rem)]
+            sm:text-[clamp(2rem,4vw,3.5rem)]
+            lg:text-[clamp(2.2rem,3.5vw,3.8rem)]
+          "
+        >
+          <span className="text-[#111C3D]">Concert </span>
+          <span className="text-[#0072CE]">Countdown</span>
+        </h1>
+
+        <p
+          className="
+            mt-1
+            sm:mt-2
+            text-[clamp(9px,1.2vw,14px)]
+            sm:text-[clamp(10px,1.3vw,15px)]
+            text-[#555F78]
+            tracking-[0.14em]
+            sm:tracking-[0.2em]
+            uppercase
+            font-medium
+          "
+        >
+          Featuring{' '}
+          <span className="font-bold text-[#111C3D]">
+            {EVENT_CONFIG.artistName}
+          </span>{' '}
+          Live
+        </p>
+      </motion.div>
 
       {/* Countdown Cards */}
       <div
@@ -103,174 +143,135 @@ export const Countdown = () => {
           grid
           grid-cols-4
           w-full
-          gap-[clamp(0.6rem,1.6vw,1.25rem)]
-          sm:gap-[clamp(0.75rem,2vw,1.75rem)]
-          md:gap-[clamp(0.9rem,2.4vw,2.25rem)]
-          lg:gap-[clamp(1rem,2.6vw,2.5rem)]
-          xl:gap-[clamp(1.1rem,2.8vw,3rem)]
+          max-w-[500px]
+          gap-3
+          sm:gap-4
+          lg:gap-5
         "
       >
-
-        <CountdownCard
-          value={timeLeft.days}
-          label="Days"
-        />
-
-        <CountdownCard
-          value={timeLeft.hours}
-          label="Hours"
-        />
-
-        <CountdownCard
-          value={timeLeft.minutes}
-          label="Minutes"
-        />
-
-        <CountdownCard
-          value={timeLeft.seconds}
-          label="Seconds"
-        />
-
+        <CountdownCard value={timeLeft.days} label="Days" />
+        <CountdownCard value={timeLeft.hours} label="Hours" />
+        <CountdownCard value={timeLeft.minutes} label="Minutes" />
+        <CountdownCard value={timeLeft.seconds} label="Seconds" />
       </div>
-
 
       {/* Event Details */}
       <div
         className="
-          mt-[clamp(1.25rem,2.6vw,2rem)]
-          sm:mt-[clamp(1.5rem,3vw,2.5rem)]
-          md:mt-[clamp(1.75rem,3.4vw,2.75rem)]
-          lg:mt-[clamp(1.1rem,1.9vw,1.6rem)]
-          xl:mt-[clamp(1rem,1.6vw,1.5rem)]
-          2xl:mt-[clamp(0.9rem,1.4vw,1.4rem)]
-          glass-panel
-          px-[clamp(1rem,2vw,1.5rem)]
-          sm:px-[clamp(1.25rem,2.6vw,2rem)]
-          md:px-[clamp(1.5rem,3vw,2.5rem)]
-          lg:px-[clamp(1.1rem,2.2vw,2rem)]
-          xl:px-[clamp(1rem,2vw,1.8rem)]
-          py-[clamp(0.85rem,1.6vw,1.25rem)]
-          sm:py-[clamp(1rem,1.9vw,1.5rem)]
-          md:py-[clamp(1.1rem,2.1vw,1.75rem)]
-          lg:py-[clamp(0.8rem,1.4vw,1.25rem)]
-          xl:py-[clamp(0.75rem,1.2vw,1.15rem)]
-          rounded-[clamp(0.9rem,1.8vw,1.5rem)]
-          sm:rounded-[clamp(1rem,2vw,1.75rem)]
-          border
-          border-blue-100/60
-          shadow-[0_8px_24px_rgba(60,80,150,0.08)]
-          hover:shadow-[0_12px_36px_rgba(60,80,150,0.10)]
-          transition-shadow
-          duration-300
+          mt-5
+          sm:mt-6
+          lg:mt-7
           w-full
+          max-w-[520px]
           flex
           flex-col
           sm:flex-row
           items-stretch
           sm:items-center
-          justify-between
+          justify-center
           gap-3
-          sm:gap-4
-          md:gap-5
+          sm:gap-3
           lg:gap-4
-          xl:gap-3.5
-          2xl:gap-4
         "
       >
 
         {/* Date */}
-        <div className="flex items-center gap-2.5 sm:gap-3 md:gap-3.5 min-w-0 flex-1">
-
-          <div className="p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-purple-100 text-purple-600 text-sm sm:text-base md:text-lg shrink-0">
+        <div
+          className="
+            flex
+            items-center
+            gap-2.5
+            bg-white/80
+            border
+            border-[#0072CE]/15
+            rounded-xl
+            px-3
+            sm:px-4
+            py-2.5
+            sm:py-3
+            flex-1
+            shadow-[0_2px_8px_rgba(0,114,206,0.06)]
+          "
+        >
+          <div className="p-2 rounded-lg bg-[#0072CE]/10 text-[#0072CE] text-sm shrink-0">
             <FaCalendarDay />
           </div>
-
-          <div className="text-left min-w-0 flex-1">
-            <p className="text-[9px] sm:text-[10px] md:text-[11px] text-[#6B7280] uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold sm:font-bold leading-none">
+          <div className="text-left min-w-0">
+            <p className="text-[8px] sm:text-[9px] text-[#6B7280] uppercase tracking-[0.18em] font-semibold leading-none">
               Date & Day
             </p>
-
-            <p className="
-              mt-1
-              text-[clamp(11px,1.3vw,15px)]
-              sm:text-[clamp(12px,1.45vw,17px)]
-              md:text-[clamp(13px,1.6vw,18px)]
-              font-bold sm:font-extrabold
-              text-[#111C3D]
-              tracking-wide
-              leading-tight
-            ">
-              {EVENT_CONFIG.displayDate}{' '}
-              <span className="text-purple-600">
+            <p className="mt-0.5 text-[clamp(10px,1.1vw,13px)] font-bold text-[#111C3D] leading-tight">
+              {EVENT_CONFIG.displayDate}
+              <br />
+              <span className="text-[#0072CE]">
                 ({EVENT_CONFIG.displayDay})
               </span>
             </p>
           </div>
-
         </div>
-
-
-        <div className="hidden sm:block h-8 sm:h-9 md:h-10 w-px bg-purple-200/80 shrink-0" />
 
 
         {/* Time */}
-        <div className="flex items-center gap-2.5 sm:gap-3 md:gap-3.5 min-w-0 flex-1">
-
-          <div className="p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-indigo-100 text-indigo-600 text-sm sm:text-base md:text-lg shrink-0">
+        <div
+          className="
+            flex
+            items-center
+            gap-2.5
+            bg-white/80
+            border
+            border-[#0072CE]/15
+            rounded-xl
+            px-3
+            sm:px-4
+            py-2.5
+            sm:py-3
+            flex-1
+            shadow-[0_2px_8px_rgba(0,114,206,0.06)]
+          "
+        >
+          <div className="p-2 rounded-lg bg-[#0072CE]/10 text-[#0072CE] text-sm shrink-0">
             <FaClock />
           </div>
-
-          <div className="text-left min-w-0 flex-1">
-            <p className="text-[9px] sm:text-[10px] md:text-[11px] text-[#6B7280] uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold sm:font-bold leading-none">
+          <div className="text-left min-w-0">
+            <p className="text-[8px] sm:text-[9px] text-[#6B7280] uppercase tracking-[0.18em] font-semibold leading-none">
               Time
             </p>
-
-            <p className="
-              mt-1
-              text-[clamp(11px,1.3vw,15px)]
-              sm:text-[clamp(12px,1.45vw,17px)]
-              md:text-[clamp(13px,1.6vw,18px)]
-              font-bold sm:font-extrabold
-              text-[#111C3D]
-              tracking-wide
-              leading-tight
-            ">
+            <p className="mt-0.5 text-[clamp(10px,1.1vw,13px)] font-bold text-[#111C3D] leading-tight">
               {EVENT_CONFIG.displayTime}
             </p>
           </div>
-
         </div>
 
 
-        <div className="hidden sm:block h-8 sm:h-9 md:h-10 w-px bg-purple-200/80 shrink-0" />
-
-
         {/* Venue */}
-        <div className="flex items-center gap-2.5 sm:gap-3 md:gap-3.5 min-w-0 flex-1">
-
-          <div className="p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-blue-100 text-blue-600 text-sm sm:text-base md:text-lg shrink-0">
+        <div
+          className="
+            flex
+            items-center
+            gap-2.5
+            bg-white/80
+            border
+            border-[#0072CE]/15
+            rounded-xl
+            px-3
+            sm:px-4
+            py-2.5
+            sm:py-3
+            flex-1
+            shadow-[0_2px_8px_rgba(0,114,206,0.06)]
+          "
+        >
+          <div className="p-2 rounded-lg bg-[#0072CE]/10 text-[#0072CE] text-sm shrink-0">
             <FaLocationDot />
           </div>
-
-          <div className="text-left min-w-0 flex-1">
-            <p className="text-[9px] sm:text-[10px] md:text-[11px] text-[#6B7280] uppercase tracking-[0.18em] sm:tracking-[0.2em] font-semibold sm:font-bold leading-none">
+          <div className="text-left min-w-0">
+            <p className="text-[8px] sm:text-[9px] text-[#6B7280] uppercase tracking-[0.18em] font-semibold leading-none">
               Venue
             </p>
-
-            <p className="
-              mt-1
-              text-[clamp(11px,1.3vw,15px)]
-              sm:text-[clamp(12px,1.45vw,17px)]
-              md:text-[clamp(13px,1.6vw,18px)]
-              font-bold sm:font-extrabold
-              text-[#111C3D]
-              tracking-wide
-              leading-tight
-            ">
+            <p className="mt-0.5 text-[clamp(10px,1.1vw,13px)] font-bold text-[#111C3D] leading-tight">
               {EVENT_CONFIG.venueName}
             </p>
           </div>
-
         </div>
 
       </div>

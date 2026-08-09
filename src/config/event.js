@@ -1,6 +1,6 @@
 import hclLogoImg from '../assets/hcllogo.png';
 import hcl50LogoImg from '../assets/hcl50logo.png';
-import singerImg from '../assets/singer.png';
+import singerImg from '../assets/singer.jpeg';
 
 export const EVENT_CONFIG = {
   presenter: "HCLTech Presents",

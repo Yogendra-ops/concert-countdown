@@ -9,42 +9,14 @@ export const Hero = () => {
         relative
         w-full
         h-full
-        flex
-        items-center
-        justify-center
-        lg:justify-center
+        overflow-hidden
       "
+      style={{
+        background: 'linear-gradient(160deg, #0072CE 0%, #1769E8 35%, #2E7BF6 65%, #4A90F7 100%)',
+      }}
     >
 
-      {/* Aura */}
-      <motion.div
-        className="
-          absolute
-          w-[clamp(300px,48vw,780px)]
-          lg:w-[clamp(380px,42vw,740px)]
-          xl:w-[clamp(400px,40vw,720px)]
-          2xl:w-[clamp(420px,38vw,700px)]
-          aspect-square
-          rounded-full
-          pointer-events-none
-        "
-        style={{
-          background:
-            'radial-gradient(circle, rgba(139,92,246,0.14) 0%, rgba(59,130,246,0.07) 45%, transparent 70%)',
-          filter: 'blur(75px)',
-        }}
-        animate={{
-          scale: [0.98, 1.04, 0.98],
-          opacity: [0.5, 0.72, 0.5],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-
-      {/* Image */}
+      {/* Singer Image — fills panel, anchored to top */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
@@ -53,68 +25,92 @@ export const Hero = () => {
           ease: [0.16, 1, 0.3, 1],
         }}
         className="
-          relative
-          w-full
-          h-full
+          absolute
+          inset-0
+          z-[5]
           flex
-          justify-center
-          lg:justify-center
-          min-w-0
           items-center
+          justify-center
         "
       >
-
-        <motion.div
-          animate={{
-            y: [-4, 4, -4],
-            scale: [1, 1.008, 1],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
+        <img
+          src={EVENT_CONFIG.singerImage}
+          alt={EVENT_CONFIG.artistName}
           className="
-            relative
+            block
             w-full
             h-full
-            flex
-            justify-center
-            lg:justify-center
-            items-center
+            object-cover
+            object-top
+            pointer-events-none
           "
+          style={{
+            filter: 'drop-shadow(0 8px 30px rgba(0,0,0,0.3))',
+          }}
+          loading="eager"
+        />
+      </motion.div>
+
+      {/* Dark gradient at bottom for text readability */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[45%] z-[8] pointer-events-none"
+        style={{
+          background: 'linear-gradient(to top, rgba(0,60,150,0.75) 0%, rgba(0,60,150,0.3) 50%, transparent 100%)',
+        }}
+      />
+
+      {/* Concert Name Overlay — positioned within card bounds */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.4,
+          duration: 0.7,
+        }}
+        className="
+          absolute
+          bottom-4
+          sm:bottom-5
+          lg:bottom-6
+          left-4
+          sm:left-5
+          lg:left-6
+          z-[10]
+          pointer-events-none
+        "
+      >
+        <h2
+          className="
+            font-heading
+            uppercase
+            text-white
+            leading-[0.95]
+            tracking-wide
+            text-[clamp(1.4rem,3.2vw,2.6rem)]
+            lg:text-[clamp(1.6rem,2.6vw,2.8rem)]
+          "
+          style={{
+            textShadow: '0 2px 12px rgba(0,0,0,0.5), 0 0 40px rgba(0,50,150,0.4)',
+          }}
         >
-
-          <img
-            src={EVENT_CONFIG.singerImage}
-            alt={EVENT_CONFIG.artistName}
-            className="
-              block
-              w-auto
-              max-w-[min(100%,820px)]
-              lg:max-w-[min(100%,780px)]
-              xl:max-w-[min(100%,740px)]
-              2xl:max-w-[min(100%,720px)]
-              h-auto
-              max-h-[clamp(300px,60dvh,780px)]
-              lg:max-h-[clamp(340px,55dvh,680px)]
-              xl:max-h-[clamp(360px,52dvh,660px)]
-              2xl:max-h-[clamp(380px,50dvh,640px)]
-              min-h-[clamp(240px,42dvh,460px)]
-              lg:min-h-[clamp(280px,40dvh,450px)]
-              xl:min-h-[clamp(300px,38dvh,440px)]
-              object-contain
-              pointer-events-none
-            "
-            style={{
-              borderRadius: '30px',
-              filter:
-                'drop-shadow(0 18px 42px rgba(70,80,150,0.17))',
-            }}
-            loading="eager"
-          />
-
-        </motion.div>
+          {EVENT_CONFIG.artistName}
+        </h2>
+        <h3
+          className="
+            font-heading
+            uppercase
+            text-white/95
+            leading-[1]
+            tracking-[0.08em]
+            text-[clamp(0.9rem,1.8vw,1.5rem)]
+            lg:text-[clamp(1rem,1.5vw,1.6rem)]
+          "
+          style={{
+            textShadow: '0 2px 12px rgba(0,0,0,0.5), 0 0 40px rgba(0,50,150,0.4)',
+          }}
+        >
+          Live Concert
+        </h3>
       </motion.div>
 
     </div>

@@ -16,24 +16,15 @@ export const Navbar = () => {
         z-20
         w-full
         shrink-0
-        pt-1.5
-        sm:pt-2
-        md:pt-2.5
-        lg:pt-2
-        xl:pt-1.5
-        2xl:pt-1.5
-        pb-1.5
-        sm:pb-2
-        lg:pb-1.5
-        xl:pb-1
-        2xl:pb-1
+        py-3
+        sm:py-4
+        md:py-5
+        lg:py-4
+        xl:py-5
       "
     >
 
-      {/* =====================================================
-          BRANDING ROW
-         ===================================================== */}
-
+      {/* BRANDING ROW */}
       <div
         className="
           w-full
@@ -180,99 +171,6 @@ export const Navbar = () => {
           </div>
 
         </motion.div>
-
-      </div>
-
-
-      {/* =====================================================
-          CENTER TITLE
-         ===================================================== */}
-
-      <div
-        className="
-          w-full
-          flex
-          flex-col
-          items-center
-          justify-center
-          text-center
-          mt-[clamp(0.6rem,1.6vw,1.1rem)]
-          sm:mt-[clamp(0.7rem,1.8vw,1.2rem)]
-          lg:mt-[clamp(0.4rem,1vw,0.75rem)]
-          xl:mt-[clamp(0.35rem,0.9vw,0.65rem)]
-          2xl:mt-[clamp(0.35rem,0.8vw,0.6rem)]
-          px-1
-        "
-      >
-
-        <motion.h1
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.6,
-          }}
-          className="
-            font-heading
-            uppercase
-            font-black
-            text-gradient-hcl
-            leading-[0.95]
-            tracking-[0.03em]
-            sm:tracking-wide
-            text-[clamp(2rem,6vw,4.5rem)]
-            sm:text-[clamp(2.2rem,6.5vw,5rem)]
-            lg:text-[clamp(2.3rem,5.2vw,4.2rem)]
-            xl:text-[clamp(2.4rem,4.8vw,4rem)]
-            2xl:text-[clamp(2.5rem,4.5vw,3.8rem)]
-            max-w-full
-          "
-        >
-          {EVENT_CONFIG.eventTitle}
-        </motion.h1>
-
-
-        {/* Artist */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 0.5,
-            duration: 0.5,
-          }}
-          className="
-            mt-1.5
-            sm:mt-2
-            lg:mt-1
-            xl:mt-0.5
-            text-[clamp(9px,1.4vw,16px)]
-            sm:text-[clamp(10px,1.5vw,17px)]
-            lg:text-[clamp(10px,1.15vw,14px)]
-            xl:text-[clamp(10px,1vw,13px)]
-            text-[#555F78]
-            tracking-[0.14em]
-            sm:tracking-[0.2em]
-            uppercase
-            font-normal
-          "
-        >
-          Featuring{' '}
-
-          <span
-            className="
-              font-bold
-              text-[#111C3D]
-              underline
-              decoration-purple-400
-              underline-offset-2
-              sm:underline-offset-4
-            "
-          >
-            {EVENT_CONFIG.artistName}
-          </span>{' '}
-
-          Live
-        </motion.p>
 
       </div>
 
