@@ -58,7 +58,7 @@ export const Navbar = () => {
                 whitespace-nowrap
               "
             >
-              HCLTech
+
             </span>
 
             <span
@@ -85,7 +85,7 @@ export const Navbar = () => {
                 whitespace-nowrap
               "
             >
-              Supercharging Progress™
+
             </span>
 
           </div>
