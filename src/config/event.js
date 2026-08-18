@@ -26,7 +26,7 @@ export const EVENT_CONFIG = {
 
   displayTime: "4:00 PM Onwards",
 
-  venueName: "Vijayawada",
+  venueName: "HCLTech Vijayawada Campus",
 
   venueLocation: "Vijayawada, Andhra Pradesh, India",
 
